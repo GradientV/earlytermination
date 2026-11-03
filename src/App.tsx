@@ -4,7 +4,6 @@ import {
   Link,
   NavLink,
   Route,
-  Routes,
   useLocation,
   useSearchParams,
 } from "react-router-dom";
@@ -21,6 +20,8 @@ import {
   X,
 } from "lucide-react";
 import ServicesPage from "./ServicesPage";
+import AnimatedRoutes from "./AnimatedRoutes";
+import { Affiliations, SocialLinks } from "./ProfessionalLinks";
 
 const agencyLicense =
   "https://licensing.fdacs.gov/access/agency.aspx?CATEGORY=&COUNTY=00&LICENSE=A+3500258&ORG_ID=&STATUS=ORG_DETAIL&TYPE=AGENCY";
@@ -221,7 +222,7 @@ function Home() {
             Move forward with experience on your side.
           </p>
           <div className="hero-actions">
-            <Link className="button button-brass" to="/contact">
+            <Link className="button button-accent" to="/contact">
               A confidential conversation
               <ArrowUpRight size={18} />
             </Link>
@@ -366,13 +367,14 @@ function Home() {
           <ArrowLink to="/about">Meet your investigators</ArrowLink>
         </div>
       </section>
+      <Affiliations />
       <section className="attorney-feature">
         <img
-          src="/images/client-consultation.webp"
-          width="1400"
-          height="934"
+          src="/images/john-steinhilber.webp"
+          width="685"
+          height="900"
           loading="lazy"
-          alt="Two professionals reviewing a case together"
+          alt="John Steinhilber, investigator and former U.S. Probation Officer"
         />
         <div>
           <div className="section-label">A PARTNER TO YOUR PRACTICE</div>
@@ -550,6 +552,7 @@ function About() {
           </div>
         </article>
       </section>
+      <Affiliations />
       <ContactBand />
     </>
   );
@@ -602,12 +605,42 @@ function AttorneyServices() {
           </Link>
         </div>
       </section>
-      <div className="attorney-page-image">
-        <img
-          src="/images/client-consultation.webp"
-          alt="Professional consultation at a desk"
-        />
-      </div>
+      <section
+        className="attorney-team shell"
+        aria-label="Your investigative team"
+      >
+        <figure>
+          <img
+            src="/images/founder.webp"
+            width="721"
+            height="900"
+            alt="Jeff Feldman"
+          />
+          <figcaption>
+            <span>Jeff Feldman</span>
+            <span>Founder & lead investigator</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/images/john-steinhilber.webp"
+            width="685"
+            height="900"
+            alt="John Steinhilber"
+          />
+          <figcaption>
+            <span>John Steinhilber</span>
+            <span>Investigator</span>
+          </figcaption>
+        </figure>
+        <div className="attorney-team-note">
+          <span className="eyebrow">THE EXPERIENCE BEHIND YOUR CASE</span>
+          <p>
+            Former federal probation officers. A dedicated investigative team.
+          </p>
+          <ArrowLink to="/about">Meet the firm</ArrowLink>
+        </div>
+      </section>
       <section className="shell section-space">
         <div className="section-label">
           PRACTICAL SUPPORT FOR YOUR LEGAL TEAM
@@ -965,8 +998,9 @@ function Privacy() {
         </p>
         <h2>Third-party links</h2>
         <p>
-          License verification links open the Florida Department of Agriculture
-          and Consumer Services website, which has its own privacy practices.
+          License verification, professional directory, social profile, and
+          review links open external websites. Those services have their own
+          privacy practices.
         </p>
         <h2>Questions</h2>
         <p>
@@ -1076,18 +1110,10 @@ const titles: Record<string, string> = {
   "/privacy": "Privacy",
 };
 function PageEffects() {
-  const { pathname, hash } = useLocation();
-  useEffect(() => {
-    document.getElementById("main-content")?.focus({ preventScroll: true });
-  }, [pathname]);
+  const { pathname } = useLocation();
   useEffect(() => {
     document.title = `${titles[pathname] || "Page Not Found"} | Best Background Investigations`;
-    if (hash)
-      requestAnimationFrame(() =>
-        document.getElementById(hash.slice(1))?.scrollIntoView(),
-      );
-    else window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname, hash]);
+  }, [pathname]);
   return null;
 }
 
@@ -1100,7 +1126,7 @@ export default function App() {
       <PageEffects />
       <Header />
       <main id="main-content" tabIndex={-1} className="outline-none">
-        <Routes>
+        <AnimatedRoutes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<About />} />
@@ -1125,8 +1151,9 @@ export default function App() {
           />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
+        </AnimatedRoutes>
       </main>
+      <SocialLinks />
       <Footer />
     </>
   );

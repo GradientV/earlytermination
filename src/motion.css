@@ -1,0 +1,15 @@
+#main-content {
+  overflow-x: clip;
+}
+
+.page-transition {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

@@ -19,3 +19,13 @@ Completed November 2, 2026.
 Local screenshots are kept in ignored `.qa/`. Full-page captures can require scrolling first to trigger lazy image loading.
 
 Typography revision: restored the client's original headline, Space Grotesk headings, and Raleway body font. Removed split-color/italic heading fragments and decorative numbering. The production build passed again. All seven pages were checked at 320px: no horizontal overflow remains after adjusting the contact phone size. Browser inspection confirms every heading uses Space Grotesk, with no mixed heading markup or decorative index elements. Updated desktop and mobile hero screenshots are saved as `.qa/revised-headline-desktop.jpg` and `.qa/revised-headline-mobile.jpg`.
+
+Muted palette, imagery, links, and motion revision:
+
+- Replaced brass with muted sage and adjusted backgrounds to stone/soft charcoal.
+- Removed the consultation stock image from both pages and published assets. The home page now uses John's genuine portrait; the attorney page uses both investigators' portraits.
+- Added the four client-supplied social profile/review URLs and local logo assets, plus FALI and INTELLENET emblems. The social strip is present on all seven pages. No numeric rating or review count is asserted.
+- Added 240ms route slide/fade transitions, filter motion, and restrained disclosure, hero, navigation, and logo effects. Reduced-motion preferences disable the motion.
+- Browser-tested desktop and mobile navigation, service deep links after animated entry, expanded service scrolling/focus, filter changes, and service-to-contact preselection.
+- Checked all seven pages at 320px against `documentElement.clientWidth`, and the attorney layout at 768px: content width equals viewport content width, without horizontal scrolling. Adjusted footer phone sizing for narrow widths.
+- Social hrefs were checked against the current client site's source. Source verification and image derivations are in `SOCIAL-SOURCES.md`.

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, ChevronDown, Search } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { motion, useReducedMotion } from "motion/react";
 import { services, type Service, type ServiceId } from "./services";
 
 type FilterId = "all" | "investigations" | "federal" | "attorneys";
@@ -21,6 +22,7 @@ function matchesFilter(service: Service, filter: FilterId) {
 }
 
 export default function ServicesPage() {
+  const reduceMotion = useReducedMotion();
   const { hash } = useLocation();
   const [filter, setFilter] = useState<FilterId>("all");
   const [query, setQuery] = useState("");
@@ -136,7 +138,13 @@ export default function ServicesPage() {
           {searchTerm ? ` matching “${query.trim()}”` : " available"}
         </p>
 
-        <div className="services-list">
+        <motion.div
+          className="services-list"
+          key={filter}
+          initial={reduceMotion ? false : { opacity: 0, x: 12 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: reduceMotion ? 0 : 0.22 }}
+        >
           {visibleServices.map((service) => {
             const expanded = openService === service.id;
 
@@ -194,7 +202,7 @@ export default function ServicesPage() {
               </article>
             );
           })}
-        </div>
+        </motion.div>
 
         {visibleServices.length === 0 && (
           <div className="service-empty">

@@ -32,6 +32,10 @@ The form validates required fields, displays a review screen, and builds a `mail
 
 The client’s original logo, investigator portraits, and photography are included locally. Photography uses optimized WebP copies. Fonts are self-hosted through Fontsource, with no external font requests or analytics.
 
+The palette uses muted sage, stone, and soft charcoal. Genuine investigator portraits replace the consultation stock photo. `src/ProfessionalLinks.tsx` contains the verified LinkedIn, Google Reviews, Instagram, TikTok, and FALI profile destinations. Social and association logos use optimized local WebP copies, displayed in a muted treatment. Sources are recorded in `docs/SOCIAL-SOURCES.md`.
+
+Page transitions use Motion with a short horizontal slide/fade. Service filters and disclosures have restrained motion. `prefers-reduced-motion` disables these effects. Header and footer content remain in place while the page changes.
+
 See `docs/CONTENT-SOURCES.md` for verified facts and primary sources. The design references were The Smith Restaurant and Carnegie Diner: centered branding, immersive photography, editorial typography, restrained navigation, and rectangular calls to action.
 
 The `.gitignore` was copied from GradientV’s `boncafe` client project, with exclusions added for TypeScript build state and local QA. Original full-size image files are kept in ignored `images-raw/`.

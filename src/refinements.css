@@ -1,0 +1,368 @@
+.hero-kicker,
+.hero h1,
+.hero-inner > p,
+.hero-actions {
+  animation: quiet-enter 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero h1 {
+  animation-delay: 60ms;
+}
+.hero-inner > p {
+  animation-delay: 120ms;
+}
+.hero-actions {
+  animation-delay: 180ms;
+}
+.expertise-detail:not([hidden]),
+.faq-list article > div:not([hidden]),
+.service-detail-content,
+.inquiry-review,
+.inquiry-panel > form,
+.mobile-nav {
+  animation: quiet-enter 240ms ease both;
+}
+.brand img {
+  transition:
+    opacity 220ms ease,
+    transform 300ms ease;
+}
+.brand:hover img {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+.footer-main > * {
+  min-width: 0;
+}
+.footer-contact .footer-phone {
+  gap: clamp(14px, 2vw, 28px);
+  font-size: clamp(26px, 2.5vw, 32px);
+}
+
+.affiliations-section {
+  background: #e4e6dd;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.affiliations-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding-block: 35px;
+}
+.affiliations-inner .eyebrow {
+  color: var(--muted);
+  font-size: 8px;
+}
+.affiliations-inner h2 {
+  font-size: 28px;
+  margin-top: 12px;
+}
+.affiliation-logos {
+  display: flex;
+  align-items: center;
+  gap: 65px;
+}
+.affiliation-logos img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: grayscale(1);
+  opacity: 0.8;
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease;
+}
+.affiliation-logos a:hover img {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.attorney-feature > img {
+  height: 610px;
+  max-height: none;
+  object-position: 50% 8%;
+  filter: saturate(0.2);
+}
+.attorney-team {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.85fr;
+  gap: 24px;
+  align-items: center;
+}
+.attorney-team figure {
+  margin: 0;
+  min-width: 0;
+  background: #dfe2d7;
+}
+.attorney-team figure > img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  object-position: 50% 23%;
+  filter: saturate(0.25);
+}
+.attorney-team figcaption {
+  padding: 19px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.attorney-team figcaption > span:first-child {
+  font-family: var(--font-heading);
+  font-size: 17px;
+}
+.attorney-team figcaption > span:last-child {
+  font-size: 9px;
+  color: var(--muted);
+}
+.attorney-team-note {
+  padding-left: 25px;
+}
+.attorney-team-note .eyebrow {
+  font-size: 8px;
+  color: var(--muted);
+}
+.attorney-team-note > p {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  margin: 22px 0 30px;
+}
+
+.social-section {
+  background: #dfe2da;
+  border-top: 1px solid #ccd0c4;
+  padding-block: 38px 48px;
+}
+.social-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.social-heading .eyebrow {
+  font-size: 8px;
+  color: #56634f;
+}
+.social-heading > p {
+  font-size: 11px;
+  color: #65705e;
+}
+.social-logos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+  align-items: center;
+}
+.social-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 88px;
+  padding: 5px 20px;
+  border-right: 1px solid #c8cec0;
+}
+.social-logo:last-child {
+  border-right: 0;
+}
+.social-logo > img {
+  object-fit: contain;
+  width: auto;
+  max-width: 155px;
+  max-height: 65px;
+  filter: grayscale(1);
+  opacity: 0.75;
+  mix-blend-mode: multiply;
+  transition:
+    filter 250ms ease,
+    opacity 250ms ease,
+    transform 250ms ease;
+}
+.social-logo > svg {
+  color: #697462;
+  opacity: 0.6;
+  transition:
+    transform 250ms ease,
+    opacity 250ms ease;
+}
+.social-logo-linkedin > img {
+  width: 150px;
+  height: auto;
+}
+.social-logo-google > img {
+  width: 150px;
+  max-height: 84px;
+}
+.social-logo-instagram > img {
+  height: 61px;
+  width: 61px;
+}
+.social-logo-tiktok > img {
+  height: 57px;
+  width: 57px;
+}
+.social-logo:hover > img,
+.social-logo:focus-visible > img {
+  filter: grayscale(0.65);
+  opacity: 1;
+  transform: translateY(-3px);
+}
+.social-logo:hover > svg,
+.social-logo:focus-visible > svg {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+@keyframes quiet-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .affiliation-logos {
+    gap: 35px;
+  }
+  .affiliations-inner h2 {
+    font-size: 24px;
+    max-width: 290px;
+  }
+  .attorney-team {
+    grid-template-columns: 1fr 1fr;
+  }
+  .attorney-team figure > img {
+    height: 400px;
+  }
+  .attorney-team-note {
+    grid-column: 1 / -1;
+    padding: 15px 0 0;
+    max-width: 500px;
+  }
+  .attorney-team-note > p {
+    margin-block: 15px 20px;
+    font-size: 26px;
+  }
+  .social-logo {
+    padding-inline: 8px;
+    gap: 8px;
+  }
+  .social-logo-linkedin > img,
+  .social-logo-google > img {
+    width: 110px;
+  }
+  .social-logo-instagram > img {
+    height: 49px;
+    width: 49px;
+  }
+  .social-logo-tiktok > img {
+    height: 47px;
+    width: 47px;
+  }
+}
+@media (max-width: 640px) {
+  .footer-contact .footer-phone {
+    font-size: clamp(26px, 8.8vw, 36px);
+    gap: 18px;
+  }
+  .affiliations-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 32px;
+    gap: 25px;
+  }
+  .affiliations-inner h2 {
+    font-size: 25px;
+    max-width: none;
+  }
+  .affiliation-logos {
+    width: 100%;
+    gap: 48px;
+  }
+  .affiliation-logos img {
+    width: 85px;
+    height: 85px;
+  }
+  .attorney-feature > img {
+    height: 400px;
+    object-position: 50% 20%;
+  }
+  .attorney-team {
+    gap: 14px;
+  }
+  .attorney-team figure > img {
+    height: 270px;
+  }
+  .attorney-team figcaption {
+    padding: 12px 10px;
+    min-height: 69px;
+  }
+  .attorney-team figcaption > span:first-child {
+    font-size: 13px;
+  }
+  .attorney-team figcaption > span:last-child {
+    font-size: 8px;
+  }
+  .attorney-team-note > p {
+    font-size: 25px;
+  }
+  .social-section {
+    padding-block: 30px 35px;
+  }
+  .social-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .social-heading .eyebrow {
+    font-size: 7px;
+  }
+  .social-heading > p {
+    font-size: 10px;
+  }
+  .social-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+  .social-logo {
+    min-height: 99px;
+    padding-inline: 10px;
+    gap: 10px;
+  }
+  .social-logo:nth-child(2) {
+    border-right: 0;
+  }
+  .social-logo:nth-child(-n + 2) {
+    border-bottom: 1px solid #c8cec0;
+  }
+  .social-logo-linkedin > img,
+  .social-logo-google > img {
+    width: min(105px, 80%);
+  }
+}
+@media (max-width: 360px) {
+  .attorney-team figure > img {
+    height: 235px;
+  }
+  .attorney-team figcaption > span:first-child {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
