@@ -67,9 +67,6 @@
   width: 100px;
   height: 100px;
   object-fit: contain;
-  mix-blend-mode: multiply;
-  filter: grayscale(1);
-  opacity: 0.8;
   transition:
     opacity 250ms ease,
     transform 250ms ease;
@@ -83,7 +80,6 @@
   height: 610px;
   max-height: none;
   object-position: 50% 8%;
-  filter: saturate(0.2);
 }
 .attorney-team {
   display: grid;
@@ -101,7 +97,6 @@
   height: 440px;
   object-fit: cover;
   object-position: 50% 23%;
-  filter: saturate(0.25);
 }
 .attorney-team figcaption {
   padding: 19px 20px;
@@ -175,11 +170,7 @@
   width: auto;
   max-width: 155px;
   max-height: 65px;
-  filter: grayscale(1);
-  opacity: 0.75;
-  mix-blend-mode: multiply;
   transition:
-    filter 250ms ease,
     opacity 250ms ease,
     transform 250ms ease;
 }
@@ -208,7 +199,6 @@
 }
 .social-logo:hover > img,
 .social-logo:focus-visible > img {
-  filter: grayscale(0.65);
   opacity: 1;
   transform: translateY(-3px);
 }

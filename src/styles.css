@@ -580,7 +580,6 @@ svg {
   height: 540px;
   object-fit: cover;
   object-position: 50% 28%;
-  filter: saturate(0.3);
 }
 .photo-caption {
   position: absolute;
@@ -644,7 +643,6 @@ svg {
   height: 100%;
   max-height: 620px;
   object-fit: cover;
-  filter: saturate(0.25);
 }
 .attorney-feature > div {
   padding: 76px max(55px, calc((100vw - 1280px) / 2));
@@ -876,7 +874,6 @@ svg {
   width: 100%;
   object-fit: cover;
   object-position: center 25%;
-  filter: saturate(0.3);
 }
 .team-profile .eyebrow {
   color: var(--muted);
